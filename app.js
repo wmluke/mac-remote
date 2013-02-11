@@ -5,7 +5,8 @@
 var express = require('express'),
     http = require('http'),
     path = require('path'),
-    exec = require('child_process').exec;
+    exec = require('child_process').exec,
+    Q = require('q');
 
 var app = express();
 
@@ -39,8 +40,29 @@ app.get('/backup/pause', function (req, res) {
         } else {
             console.info(stdout);
         }
-        res.redirect('/');
     });
+    exec('killall arqcommitter', function (error, stdout, stderr) {
+        if (error) {
+            console.info(stderr);
+        } else {
+            console.info(stdout);
+        }
+    });
+    exec('killall Arq', function (error, stdout, stderr) {
+        if (error) {
+            console.info(stderr);
+        } else {
+            console.info(stdout);
+        }
+    });
+    exec('killall "Arq Agent"', function (error, stdout, stderr) {
+        if (error) {
+            console.info(stderr);
+        } else {
+            console.info(stdout);
+        }
+    });
+    res.redirect('/');
 });
 
 app.get('/backup/start', function (req, res) {
@@ -50,8 +72,16 @@ app.get('/backup/start', function (req, res) {
         } else {
             console.info(stdout);
         }
-        res.redirect('/');
     });
+    exec('open /Applications/Arq.app', function (error, stdout, stderr) {
+        if (error) {
+            console.info(stderr);
+        } else {
+            console.info(stdout);
+        }
+    });
+
+    res.redirect('/');
 });
 
 
