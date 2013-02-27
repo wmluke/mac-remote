@@ -4,7 +4,7 @@ Online backup services are great, but they can bring your Internets to a crawl w
 
 So I created `mac-remote` to easily pause and resume [Backblaze](http://www.backblaze.com) and [Arq](http://www.haystacksoftware.com/arq/) cloud backup services from any phone via WiFi.
 
-## Usage
+## Clone it and Fire it up
 
 ```bash
 $ git clone git@github.com:wmluke/mac-remote.git
@@ -16,7 +16,7 @@ $ node app
 
 Safety first! Only run this app when you're connected to a TRUSTED network!
 
-# Copyright & License
+## Copyright & License
 Copyright 2012 W.L. Bunselmeyer
 
 Licensed under the Apache License, Version 2.0 (the "License");
