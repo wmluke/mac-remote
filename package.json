@@ -9,6 +9,8 @@
         "express": "3.0.1",
         "jade": "*",
         "less-middleware": "*",
-        "q": "~0.8.12"
+        "q": "~0.8.12",
+        "underscore": "~1.4.4",
+        "underscore.string": "~2.3.1"
     }
 }

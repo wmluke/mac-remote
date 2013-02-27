@@ -1,8 +1,14 @@
 extends layout
 
 block content
-    h1= title
+    div.container-fluid
+        div.row-fluid
+            div.span12
+                h1= title
 
-    ul
-        li: h1: a(href="/backup/pause") Pause Backup
-        li: h1: a(href="/backup/start") Start Backup
+                div.well
+                    h2 Backup
+                    a.btn.btn-block.btn-large.btn-primary(href="/backup/pause")
+                        i.icon-pause.icon-3x
+                    a.btn.btn-block.btn-large.btn-primary(href="/backup/start")
+                        i.icon-play.icon-3x
