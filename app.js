@@ -73,25 +73,26 @@ app.get('/backup/start', function (req, res) {
 });
 
 /**
- * Probably vulnerable to inject attacks.  Enable at your own risk.
+ * Probably vulnerable to command-line injection attacks.  Enable at your own risk.
  */
-//app.get('/say/:something', function (req, res) {
-//    var something = req.params.something || '';
-//    if (_.str.isBlank(req.params.something)) {
-//        res.send(400);
-//        return;
-//    }
-//    var sanitized = _.str.humanize(something.replace(/[^\d\w\s]/gi, ''));
-//    exec('say "' + something + '"', function (error, stdout, stderr) {
-//        if (error) {
-//            console.info(stderr);
-//        } else {
-//            console.info(stdout);
-//        }
-//    });
-//    res.send(200);
-//});
-
+/*
+ app.get('/say/:something', function (req, res) {
+ var something = req.params.something || '';
+ if (_.str.isBlank(req.params.something)) {
+ res.send(400);
+ return;
+ }
+ var sanitized = _.str.humanize(something.replace(/[^\d\w\s]/gi, ''));
+ exec('say "' + sanitized + '"', function (error, stdout, stderr) {
+ if (error) {
+ console.info(stderr);
+ } else {
+ console.info(stdout);
+ }
+ });
+ res.send(200);
+ });
+ */
 
 http.createServer(app).listen(app.get('port'), function () {
     console.log("Express server listening on port " + app.get('port'));
